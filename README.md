@@ -1,4 +1,4 @@
-# 🚀 NexusChat — Distributed Real-Time Chat System
+# NexusChat — Distributed Real-Time Chat System
 
 <div align="center">
 
@@ -331,56 +331,7 @@ kubectl -n nexus-chat scale deployment chat-app --replicas=5
 
 ---
 
-## ⚡ Benchmarking
 
-### Using websocat (WebSocket CLI)
-
-```bash
-# Install websocat
-# Windows: scoop install websocat
-# Mac: brew install websocat
-# Linux: snap install websocat
-
-# Connect to WebSocket
-websocat ws://localhost/ws/chat?token=<your-jwt-token>
-
-# Send a message
-{"event": "join_room", "data": {"room_id": "<room-uuid>"}}
-{"event": "message", "data": {"room_id": "<room-uuid>", "content": "Hello from CLI!"}}
-```
-
-### Load Testing with wrk
-
-```bash
-# HTTP endpoint benchmarking
-wrk -t12 -c400 -d30s http://localhost:8080/health
-
-# Expected results:
-# Requests/sec:  5000+
-# Avg latency:   <10ms
-```
-
----
-
-## 📝 Resume Impact
-
-This project demonstrates:
-
-### System Design
-- Designed and implemented a **distributed real-time chat system** handling 1000+ concurrent WebSocket connections across horizontally scaled instances
-- Architected **cross-instance message delivery** using Redis Pub/Sub, achieving **<50ms P99 latency** for real-time message propagation
-
-### Scalability
-- Built **stateless FastAPI microservices** with Redis-backed shared state, enabling linear horizontal scaling via `docker-compose --scale`
-- Implemented **message broker abstraction layer** supporting Redis Pub/Sub with drop-in Kafka extensibility for 100K+ msg/sec throughput
-
-### Reliability & Fault Tolerance
-- Engineered **fault-tolerant WebSocket** infrastructure with automatic reconnection, dead letter queues, and exponential backoff retry mechanisms
-- Implemented **backpressure handling** with bounded send queues and slow-client detection, preventing server-side resource exhaustion
-
-### Backend Engineering
-- Designed **idempotent message delivery** system using client-generated UUIDs, eliminating duplicate processing on network retries
-- Built **Redis-backed distributed rate limiter** using sliding window algorithm, achieving consistent rate enforcement across all service instances
 
 ---
 
