@@ -1,0 +1,112 @@
+# ================================================
+# Docker Compose — Distributed Chat System
+# ================================================
+# Services:
+#   - app:      FastAPI application (scalable)
+#   - redis:    Message broker + cache + presence
+#   - postgres: Persistent storage
+#   - nginx:    Load balancer + reverse proxy
+#
+# Usage:
+#   docker-compose up --build                  # Start all services
+#   docker-compose up --build --scale app=3    # Scale to 3 instances
+#   docker-compose down -v                     # Stop and clean up
+
+version: "3.9"
+
+services:
+  # ==========================================
+  # PostgreSQL — Persistent Data Store
+  # ==========================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: chat_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: chatuser
+      POSTGRES_PASSWORD: chatpass
+      POSTGRES_DB: chatdb
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chatuser -d chatdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - chat_network
+
+  # ==========================================
+  # Redis — Pub/Sub, Caching, Presence
+  # ==========================================
+  redis:
+    image: redis:7-alpine
+    container_name: chat_redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - chat_network
+
+  # ==========================================
+  # FastAPI Application (Scalable)
+  # ==========================================
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://chatuser:chatpass@postgres:5432/chatdb
+      - REDIS_URL=redis://redis:6379/0
+      - JWT_SECRET_KEY=super-secret-jwt-key-change-in-production
+      - DEBUG=false
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - chat_network
+    # No port mapping — traffic goes through Nginx
+
+  # ==========================================
+  # Nginx — Load Balancer & Reverse Proxy
+  # ==========================================
+  nginx:
+    image: nginx:alpine
+    container_name: chat_nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./client:/usr/share/nginx/html/client:ro
+    depends_on:
+      - app
+    networks:
+      - chat_network
+
+# ==========================================
+# Volumes — Persistent Data
+# ==========================================
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+# ==========================================
+# Network — Shared Bridge Network
+# ==========================================
+networks:
+  chat_network:
+    driver: bridge

@@ -1,0 +1,9 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+2026-04-23 15:36:17 | INFO     | app.main | Starting DistributedChat v1.0.0
+2026-04-23 15:36:17 | INFO     | app.db.session | Database tables created successfully
+2026-04-23 15:36:17 | INFO     | app.main | Database initialized
+2026-04-23 15:36:17 | INFO     | app.main | Redis client connected
+2026-04-23 15:36:17 | INFO     | app.messaging.redis_broker | Redis Pub/Sub broker connected
+2026-04-23 15:36:17 | INFO     | app.main | Redis Pub/Sub broker started
+2026-04-23 15:36:17 | INFO     | app.main | DEBUG: ABOUT TO YIELD

@@ -1,0 +1,23 @@
+# ================================================
+# Kubernetes ConfigMap & Secret
+# ================================================
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: chat-config
+  namespace: nexus-chat
+data:
+  APP_NAME: "DistributedChat"
+  DEBUG: "false"
+  REDIS_URL: "redis://redis-service:6379/0"
+  DATABASE_URL: "postgresql+asyncpg://chatuser:chatpass@postgres-service:5432/chatdb"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: chat-secrets
+  namespace: nexus-chat
+type: Opaque
+stringData:
+  JWT_SECRET_KEY: "super-secret-jwt-key-change-in-production"
+  POSTGRES_PASSWORD: "chatpass"

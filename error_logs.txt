@@ -1,0 +1,135 @@
+time="2026-04-23T21:45:58+05:30" level=warning msg="C:\\Users\\soura\\Downloads\\new project\\docker-compose.yml: `version` is obsolete"
+[2Kapp-3  | INFO:     Started server process [1]
+[2Kapp-3  | INFO:     Waiting for application startup.
+[2Kapp-3  | 2026-04-23 16:12:57 | INFO     | app.main | Starting DistributedChat v1.0.0
+[2Kapp-3  | 2026-04-23 16:12:57 | INFO     | app.db.session | Database tables created successfully
+[2Kapp-3  | 2026-04-23 16:12:57 | INFO     | app.main | Database initialized
+[2Kapp-3  | 2026-04-23 16:12:57 | INFO     | app.main | Redis client connected
+[2Kapp-3  | 2026-04-23 16:12:57 | INFO     | app.messaging.redis_broker | Redis Pub/Sub broker connected
+[2Kapp-4  | INFO:     Started server process [1]
+[2K[2Kapp-3  | 2026-04-23 16:12:57 | INFO     | app.main | Redis Pub/Sub broker started
+[2Kapp-3  | 2026-04-23 16:12:57 | INFO     | app.main | DEBUG: ABOUT TO YIELD
+[2Kapp-3  | INFO:     Application startup complete.
+[2Kapp-3  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2K[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+[2Kapp-5  |     await self.app(scope, receive, _send)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+[2Kapp-5  |     await self.simple_response(scope, receive, send, request_headers=headers)
+app-4  | INFO:     Waiting for application startup.
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+[2Kapp-3  | INFO:     127.0.0.1:59264 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-3  | INFO:     127.0.0.1:54348 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-3  | INFO:     127.0.0.1:44202 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-3  | INFO:     127.0.0.1:56796 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-3  | INFO:     127.0.0.1:55632 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-3  | INFO:     127.0.0.1:60426 - "GET /health HTTP/1.1" 200 OK
+app-5  |     await self.app(scope, receive, send)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+[2Kapp-5  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+[2Kapp-4  | 2026-04-23 16:12:56 | INFO     | app.main | Starting DistributedChat v1.0.0
+[2Kapp-4  | 2026-04-23 16:12:56 | INFO     | app.db.session | Database tables created successfully
+[2Kapp-4  | 2026-04-23 16:12:56 | INFO     | app.main | Database initialized
+[2Kapp-4  | 2026-04-23 16:12:56 | INFO     | app.main | Redis client connected
+[2Kapp-4  | 2026-04-23 16:12:56 | INFO     | app.messaging.redis_broker | Redis Pub/Sub broker connected
+[2Kapp-5  |     raise exc
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+[2Kapp-4  | 2026-04-23 16:12:56 | INFO     | app.main | Redis Pub/Sub broker started
+[2Kapp-5  |     await app(scope, receive, sender)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+[2Kapp-5  |     await self.middleware_stack(scope, receive, send)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+[2Kapp-5  |     await route.handle(scope, receive, send)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+[2Kapp-5  |     await self.app(scope, receive, send)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+[2Kapp-5  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+[2Kapp-4  | 2026-04-23 16:12:56 | INFO     | app.main | DEBUG: ABOUT TO YIELD
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+[2Kapp-5  |     raise exc
+[2Kapp-4  | INFO:     Application startup complete.
+[2Kapp-4  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2Kapp-4  | INFO:     127.0.0.1:59246 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-4  | INFO:     127.0.0.1:54336 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+[2Kapp-4  | INFO:     127.0.0.1:44176 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-4  | INFO:     127.0.0.1:56776 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-5  |     await app(scope, receive, sender)
+[2Kapp-4  | INFO:     127.0.0.1:55614 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-4  | INFO:     127.0.0.1:60410 - "GET /health HTTP/1.1" 200 OK
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+[2Kapp-5  |     response = await f(request)
+[2Kapp-5  |                ^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+[2Kapp-5  |     raw_response = await run_endpoint_function(
+[2Kapp-5  |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+[2Kapp-5  |     return await dependant.call(**values)
+[2Kapp-5  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/home/chatapp/app/api/routes/rooms.py", line 25, in create_room
+[2Kapp-5  |     room = await service.create_room(data, current_user.id)
+[2Kapp-5  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/home/chatapp/app/services/room_service.py", line 43, in create_room
+[2Kapp-5  |     await self.db.flush()
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/session.py", line 800, in flush
+[2Kapp-5  |     await greenlet_spawn(self.sync_session.flush, objects=objects)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+[2Kapp-5  |     result = context.switch(value)
+[2Kapp-5  |              ^^^^^^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4352, in flush
+[2Kapp-5  |     self._flush(objects)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4487, in _flush
+[2Kapp-5  |     with util.safe_reraise():
+[2Kapp-5  |          ^^^^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+[2Kapp-5  |     raise exc_value.with_traceback(exc_tb)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+[2Kapp-5  |     flush_context.execute()
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+[2Kapp-5  |     rec.execute(self)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+[2Kapp-5  |     util.preloaded.orm_persistence.save_obj(
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+[2Kapp-5  |     _emit_insert_statements(
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+[2Kapp-5  |     result = connection.execute(
+[2Kapp-5  |              ^^^^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+[2Kapp-5  |     return meth(
+[2Kapp-5  |            ^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+[2Kapp-5  |     return connection._execute_clauseelement(
+[2Kapp-5  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+[2Kapp-5  |     ret = self._execute_context(
+[2Kapp-5  |           ^^^^^^^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+[2Kapp-5  |     return self._exec_single_context(
+[2Kapp-5  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+[2Kapp-5  |     self._handle_dbapi_exception(
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+[2Kapp-5  |     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+[2Kapp-5  |     self.dialect.do_execute(
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+[2Kapp-5  |     cursor.execute(statement, parameters)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 572, in execute
+[2Kapp-5  |     self._adapt_connection.await_(
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+[2Kapp-5  |     return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+[2Kapp-5  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+[2Kapp-5  |     value = await result
+[2Kapp-5  |             ^^^^^^^^^^^^
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+[2Kapp-5  |     self._handle_exception(error)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 501, in _handle_exception
+[2Kapp-5  |     self._adapt_connection._handle_exception(error)
+[2Kapp-5  |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 784, in _handle_exception
+[2Kapp-5  |     raise translated_error from error
+[2Kapp-5  | sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $4: datetime.datetime(2026, 4, 23, 16, 15, 2... (can't subtract offset-naive and offset-aware datetimes)
+[2Kapp-5  | [SQL: INSERT INTO room_members (room_id, user_id, role, joined_at, id) VALUES ($1::UUID, $2::UUID, $3::roomrole, $4::TIMESTAMP WITHOUT TIME ZONE, $5::UUID)]
+[2Kapp-5  | [parameters: (UUID('6282ee46-3d48-4ca0-888b-17ef0df1d3b6'), UUID('d7eedd23-86ad-469f-a28a-4b6a5721a711'), 'ADMIN', datetime.datetime(2026, 4, 23, 16, 15, 27, 213361, tzinfo=datetime.timezone.utc), UUID('fff144a7-b7af-43d3-8f46-7feb29cedb65'))]
+[2Kapp-5  | (Background on this error at: https://sqlalche.me/e/20/dbapi)
+[2Kapp-5  | INFO:     127.0.0.1:60422 - "GET /health HTTP/1.1" 200 OK
