@@ -24,8 +24,7 @@
 - [Project Structure](#-project-structure)
 - [Design Decisions](#-design-decisions)
 - [Kubernetes Deployment](#-kubernetes-deployment)
-- [Benchmarking](#-benchmarking)
-- [Resume Impact](#-resume-impact)
+
 
 ---
 
